@@ -1,0 +1,37 @@
+/* Navbar Styling */
+.custom-navbar {
+  background-color: #0072ff;
+  padding: 12px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar brand and links */
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: white !important;
+  margin-right: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+/* Button hover effects */
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffc107 !important;
+  transform: scale(1.05);
+}
+
+/* Dropdown hover style */
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f0f0f0;
+  color: #0072ff;
+}
+
+/* Responsive spacing */
+@media (max-width: 991px) {
+  .navbar-nav .nav-link {
+    margin: 5px 0;
+  }
+}

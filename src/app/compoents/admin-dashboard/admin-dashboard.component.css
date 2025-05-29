@@ -1,0 +1,96 @@
+.dashboard-container {
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+
+
+.card-icon {
+  font-size: 36px;
+  color: #007bff;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.dashboard-card.users .card-icon {
+  color: #007bff;
+}
+.dashboard-card.subjects .card-icon {
+  color: #28a745;
+}
+.dashboard-card.attendance .card-icon {
+  color: #ff9800;
+}
+
+
+
+
+.card-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 55px;
+}
+
+.dashboard-card {
+  flex: 1 1 250px;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card color borders */
+.dashboard-card.users {
+  border-top: 6px solid #007bff;
+}
+
+.dashboard-card.subjects {
+  border-top: 6px solid #28a745;
+}
+
+.dashboard-card.attendance {
+  border-top: 6px solid #ff9800;
+}
+
+.dashboard-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #222;
+}
+
+.dashboard-card p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.card-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.card-btn:hover {
+  background-color: #0056b3;
+}
+

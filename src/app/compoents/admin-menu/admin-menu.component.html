@@ -1,0 +1,53 @@
+<body>
+
+  <!-- Admin Navbar -->
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" routerLink="#">Admin Panel</a>
+
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="adminNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link nav-button" routerLink="/add-user">Add User</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-button" routerLink="#">All Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-button" routerLink="#">Add Subject</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-button" routerLink="#">All Subjects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-button" routerLink="#">View Attendance</a>
+          </li>
+        </ul>
+
+        <!-- Profile Dropdown -->
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center nav-button" href="#" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle fs-4 me-1"></i> Admin
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" routerLink="#">Profile</a></li>
+              <li><a class="dropdown-item" routerLink="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  
+
+
+</body>
+
+
