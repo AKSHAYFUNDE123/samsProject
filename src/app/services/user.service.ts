@@ -26,9 +26,22 @@ export class UserService {
     });
   }
 
-// Get All User
+  // Get All User
 
-  getAllUsers():Observable<any>{
-          return this.http.get('http://localhost:8091/user/get-all-user');
+  getAllUsers(): Observable<any> {
+    return this.http.get('http://localhost:8091/user/get-all-user');
   }
+
+  // Delete User
+
+  // deleteUser(username: string): Observable<any> {
+  //   const url = `localhost:8091/user/delete-user-by-username?username=${username}`;
+  //   return this.http.delete(url, { responseType: 'text' });
+  // }
+
+  deleteUsers(username: string): Observable<any> {
+  const url = `http://localhost:8091/user/delete-user-by-username?username=${username}`;
+  return this.http.delete(url, { responseType: 'text' });
+}
+
 }

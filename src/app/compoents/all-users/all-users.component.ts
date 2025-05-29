@@ -21,4 +21,27 @@ export class AllUsersComponent implements OnInit {
       this.users = res;
     });
   }
+
+  // Delete Button Works
+
+  isDisplayName = 0;
+  msg = '';
+  
+  deleteUser(username: string) {
+   alert("delete heare");
+
+    this.service.deleteUsers(username).subscribe({
+      next: (res) => {
+        
+        this.isDisplayName = 1;
+        this.msg = username;
+      },
+      error: (err) => {
+        console.error('Error deleting user:', err);
+        alert('Failed to delete user.');
+      },
+    });
+  }
+
+ 
 }
