@@ -1,36 +1,77 @@
+<app-admin-menu></app-admin-menu>
 <body>
+
+<p *ngIf="isDisplayName" class="toast-popup">{{ msg }}: Registered Successfully 🎉</p>
+
+
 
   <div class="form-container">
     <h2>Register</h2>
-    <form action="#" method="POST">
+    <form [formGroup]="user" (ngSubmit)="addUser()" >
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" placeholder="Enter username" required>
+        <input type="text" id="username" name="username" placeholder="Enter username" required formControlName="username" >
+      <span *ngIf="user.get('username')?.invalid && user.get('username')?.touched">
+        invalid UserName
+
+      </span>
       </div>
+
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        <input type="password" id="password" name="password" placeholder="Enter password" required formControlName="password">
+      <span *ngIf="user.get('password')?.invalid && user.get('password')?.touched">
+        invalid Password required 8 fields
+      </span>
+
       </div>
+
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter email" required>
+        <input type="email" id="email" name="email" placeholder="Enter email" required formControlName="email">
+<span *ngIf="user.get('email')?.invalid && user.get('email')?.touched">
+        invalid UserName
+
+      </span>
       </div>
+
       <div class="form-group">
         <label for="role">Role</label>
-        <input type="text" id="role" name="role" placeholder="Enter role" required>
+        <select id="role" name="role" required formControlName="role">
+          <option value="">Select Role</option>
+          <option value="admin">Admin</option>
+          <option value="faculty">Faculty</option>
+        </select>
+        <span *ngIf="user.get('role')?.invalid && user.get('role')?.touched">
+       Select a Role
+
+      </span>
       </div>
+
+
       <div class="form-group">
         <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required formControlName="firstName">
+     <span *ngIf="user.get('firstName')?.invalid && user.get('firstName')?.touched">
+        invalid FirstName
+
+      </span>
       </div>
+
       <div class="form-group">
         <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+        <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required formControlName="lastName">
+     <span *ngIf="user.get('lastName')?.invalid && user.get('lastName')?.touched">
+        invalid lastName
+
+      </span>
       </div>
+
       <div class="form-group full-width">
-        <button type="submit">Register</button>
+        <button type="submit" [disabled]="user.invalid" >Register</button>
       </div>
     </form>
   </div>
 
 </body>
+

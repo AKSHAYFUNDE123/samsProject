@@ -1,1 +1,30 @@
-<p>all-users works!</p>
+<app-admin-menu></app-admin-menu>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Sr. No.</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th colspan="2" id="head">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.role }}</td>
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td><button type="button" class=" delete-btn">Delete</button></td>
+      <td><button type="button" class=" edit-btn">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+

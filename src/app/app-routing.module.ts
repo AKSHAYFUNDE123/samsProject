@@ -5,6 +5,7 @@ import { LoginComponent } from './compoents/login/login.component';
 import { AdminDashboardComponent } from './compoents/admin-dashboard/admin-dashboard.component';
 import { FacultyDashboardComponent } from './compoents/faculty-dashboard/faculty-dashboard.component';
 import { AddUserComponent } from './compoents/add-user/add-user.component';
+import { AllUsersComponent } from './compoents/all-users/all-users.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'add-user',
     component: AddUserComponent,
+  },
+  {
+    path: 'show-all-user',
+    component: AllUsersComponent,
   },
 ];
 

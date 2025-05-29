@@ -6,8 +6,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-top: 1px solid yellow;
 }
 
+span {
+  color: red;
+}
 .form-container {
   background: white;
   padding: 30px 40px;
@@ -16,10 +20,59 @@ body {
   width: 750px;
 }
 
+.toast-popup {
+  position: fixed;
+  bottom: 523px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1dd1a1;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  font-weight: bold;
+  animation: slideBounce 0.6s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
+  z-index: 10000;
+}
+
+/* Slide in with bounce */
+@keyframes slideBounce {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 100px);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -10px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Fade out after a delay */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+}
+
+
 h2 {
   text-align: center;
   color: #007bff;
   margin-bottom: 30px;
+}
+p {
+  text-align: center;
+  color: red;
+  position: absolute;
+  left: auto;
+  bottom: 500px;
+  font-size: large;
+  text-overflow: clip;
 }
 
 form {
@@ -44,7 +97,8 @@ label {
   margin-bottom: 5px;
 }
 
-input {
+input,
+select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;

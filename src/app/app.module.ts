@@ -64,29 +64,4 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-  user = new FormGroup({
-    username: new FormControl('', [
-      Validators.required,
-      Validators.minLength(2),
-      Validators.maxLength(20),
-    ]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(5),
-    ]),
-
-    email: new FormControl('', [Validators.email, Validators.required]),
-
-    role: new FormControl('', [Validators.required]),
-
-    firstName: new FormControl('', [
-      Validators.required,
-      Validators.minLength(2),
-    ]),
-    lastName: new FormControl('', [
-      Validators.required,
-      Validators.minLength(2),
-    ]),
-  });
-}
+export class AppModule {}
