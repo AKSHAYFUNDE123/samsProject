@@ -12,6 +12,8 @@ import { User } from '../../models/update.model';
 export class EditUserComponent implements OnInit {
   username = 'akshay';
   editUser: any;
+  isDisplayName = 0;
+
   constructor(
     private service: UserService,
     private route: ActivatedRoute,
@@ -42,10 +44,8 @@ export class EditUserComponent implements OnInit {
   }
 
   updateUser() {
-    alert('call heare');
     this.service.updatingUser(this.user.value).subscribe((res) => {
       if (res != null) {
-        alert('success');
         this.routes.navigateByUrl('/show-all-user');
       } else {
         alert('something went wrong');

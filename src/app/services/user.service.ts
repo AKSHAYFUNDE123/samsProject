@@ -52,8 +52,6 @@ export class UserService {
   updatingUser(user: any): Observable<any> {
     // const url = http://localhost:8091/user/update-user;
 
-    alert('done');
-
-    return  this.http.put('http://localhost:8091/user/update-user', user);
+    return this.http.put('http://localhost:8091/user/update-user', user);
   }
 }
