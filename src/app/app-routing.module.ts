@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from './compoents/admin-dashboard/admin-dashb
 import { FacultyDashboardComponent } from './compoents/faculty-dashboard/faculty-dashboard.component';
 import { AddUserComponent } from './compoents/add-user/add-user.component';
 import { AllUsersComponent } from './compoents/all-users/all-users.component';
+import { EditUserComponent } from './compoents/edit-user/edit-user.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'show-all-user',
     component: AllUsersComponent,
+  },
+  {
+    path: 'edit-user/:username',
+    component: EditUserComponent,
   },
 ];
 

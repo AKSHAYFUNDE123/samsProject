@@ -32,7 +32,7 @@ export class AllUsersComponent implements OnInit {
 
     this.service.deleteUsers(username).subscribe({
       next: (res) => {
-        
+        this.getAllUsers();
         this.isDisplayName = 1;
         this.msg = username;
       },

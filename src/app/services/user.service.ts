@@ -34,14 +34,26 @@ export class UserService {
 
   // Delete User
 
-  // deleteUser(username: string): Observable<any> {
-  //   const url = `localhost:8091/user/delete-user-by-username?username=${username}`;
-  //   return this.http.delete(url, { responseType: 'text' });
-  // }
-
   deleteUsers(username: string): Observable<any> {
-  const url = `http://localhost:8091/user/delete-user-by-username?username=${username}`;
-  return this.http.delete(url, { responseType: 'text' });
-}
+    const url = `http://localhost:8091/user/delete-user-by-username?username=${username}`;
+    return this.http.delete(url, { responseType: 'text' });
+  }
 
+  //Get User
+
+  getUserByUsername(username: string): Observable<any> {
+    const url = `http://localhost:8091/user/get-user-by-username/${username}`;
+
+    return this.http.get(url, { responseType: 'text' });
+  }
+
+  //Update User
+
+  updatingUser(user: any): Observable<any> {
+    // const url = http://localhost:8091/user/update-user;
+
+    alert('done');
+
+    return  this.http.put('http://localhost:8091/user/update-user', user);
+  }
 }
