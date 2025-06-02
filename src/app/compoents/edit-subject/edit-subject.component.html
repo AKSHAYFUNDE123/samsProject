@@ -1,1 +1,58 @@
-<p>edit-subject works!</p>
+<app-admin-menu></app-admin-menu>
+<body>
+
+
+<p *ngIf="isDisplayName" class="toast-popup"> Subject Added Successfully 🎉</p>
+
+    <div class="container">
+        <h2>Add New Subject</h2>
+        <form [formGroup]="subject" (ngSubmit)="editSubject()">
+            <div class="form-group">
+                <label for="subject-name">Subject Name</label>
+                <input type="text" id="subject-name" name="subject-name" placeholder="Enter subject name" formControlName="name" required>
+          <span *ngIf="subject.get('name')?.invalid && subject.get('name')?.touched">
+        invalid Subject Name
+
+      </span>
+            </div>
+            <div class="form-group">
+                <label for="subject-code">Subject Code</label>
+                <input type="text" id="subject-code" name="subject-code" placeholder="Enter subject code" formControlName="subjectCode" required>
+            <span *ngIf="subject.get('subjectCode')?.invalid && subject.get('subjectCode')?.touched">
+        invalid Subject Code
+
+      </span>
+            </div>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select id="department" name="department" required formControlName="department" >
+                    <option value="">Select Department</option>
+                    <option value="computer-science">Computer Science</option>
+                    <option value="mechanical">Mechanical Engineering</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="civil">Civil Engineering</option>
+                </select>
+                 <span *ngIf="subject.get('department')?.invalid && subject.get('department')?.touched">
+        select department
+
+      </span>
+            </div>
+            <div class="form-group">
+                <label for="assigned-faculty">Assigned Faculty</label>
+                <select id="assigned-faculty" name="assigned-faculty" formControlName="faculty" required>
+                    <option value="">Select Faculty</option>
+                    <option value="atul">Atul Tekale</option>
+                    <option value="other">Other Faculty</option>
+                </select>
+             <span *ngIf="subject.get('faculty')?.invalid && subject.get('faculty')?.touched">
+        select faculty
+
+      </span>
+            </div>
+            <div class="button-group">
+                <button [disabled]="subject.invalid" type="submit"  class="btn btn-add">Add Subject</button>
+                
+            </div>
+        </form>
+    </div>
+</body>

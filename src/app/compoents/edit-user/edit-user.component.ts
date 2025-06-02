@@ -27,6 +27,9 @@ export class EditUserComponent implements OnInit {
 
   getUser() {
     this.service.getUserByUsername(this.username).subscribe((res) => {
+
+      console.log(res);
+      
       this.editUser = res;
       if (typeof res === 'string') {
         res = JSON.parse(res);

@@ -1,1 +1,36 @@
-<p>all-subject works!</p>
+<app-admin-menu></app-admin-menu>
+
+<!-- Loading Spinner -->
+<div *ngIf="isLoading" class="loading">Loading subjects...</div>
+
+<!-- Toast Popup -->
+<p *ngIf="isDisplayName" class="toast-popup">{{ msg }}: Deleted Successfully 🎉</p>
+
+<!-- Subjects Table -->
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Sr. No.</th>
+      <th>Subject Name</th>
+      <th>Subject Code</th>
+      <th>Department</th>
+      <th>Faculty</th>
+      <th colspan="2" id="head">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let subject of subjects; let i = index">
+      <td>{{ i + 1 }}</td> <!-- Serial number using index -->
+      <td>{{ subject.name }}</td>
+      <td>{{ subject.subjectCode }}</td>
+      <td>{{ subject.department }}</td>
+      <td>{{ subject.faculty }}</td>
+      <td>
+        <button (click)="deleteSubject(subject.id, subject.name)" type="button" class="delete-btn">Delete</button>
+      </td>
+      <td>
+        <a [routerLink]="['/edit-subject', subject.id]" class="edit-btn">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
